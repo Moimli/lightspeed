@@ -8,8 +8,10 @@ jobs:
       - name: Install Conan
         id: conan
         uses: turtlebrowser/get-conan@main
-      - name: Conan version
+      - name: Conan Version
         run: echo "${{ steps.conan.outputs.version }}"
+      - name: Conan Profile Detect
+        run: conan profile detect
       - name: Checkout
         uses: actions/checkout@v4
       - name: List files in the repository
