@@ -2,7 +2,7 @@ name: Conan Package
 run-name: ${{ github.actor }} packaging project
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Package:
     runs-on: ubuntu-latest
     steps:
       - name: Install Conan
@@ -11,4 +11,4 @@ jobs:
       - name: Conan version
         run: echo "${{ steps.conan.outputs.version }}"
       - name: Conan Create
-        run: conan create ..
+        run: ls && conan create ..
