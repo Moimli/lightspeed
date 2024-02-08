@@ -10,5 +10,10 @@ jobs:
         uses: turtlebrowser/get-conan@main
       - name: Conan version
         run: echo "${{ steps.conan.outputs.version }}"
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
       - name: Conan Create
-        run: ls && conan create ..
+        run: conan create ${{ github.workspace }}
