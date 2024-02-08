@@ -11,4 +11,4 @@ jobs:
       - name: Conan version
         run: echo "${{ steps.conan.outputs.version }}"
       - name: Conan Create
-        run: conan create .
+        run: conan create ..
