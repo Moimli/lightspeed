@@ -6,6 +6,6 @@ namespace Surface
 {
     class Surface
     {
-        virtual bool is_inside(Eigen::Vector3f position) = 0;
+        virtual bool is_inside(const Eigen::Vector3f& position) = 0;
     };
 }
