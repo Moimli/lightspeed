@@ -4,13 +4,9 @@ project(lightspeed CXX)
 add_library(lightspeed)
 target_include_directories(lightspeed PUBLIC include)
 
-target_sources(lightspeed
-PRIVATE
-    "src/lightspeed.cpp"
-PUBLIC
-    "${CMAKE_CURRENT_SOURCE_DIR}/include/lightspeed.h"
-    "${CMAKE_CURRENT_SOURCE_DIR}/include/surface/surface.h"
-)
+file(GLOB_RECURSE sources CONFIGURE_DEPENDS src/*.cpp include/*.h)
+target_sources(lightspeed PRIVATE ${sources})
+
 
 find_package(Eigen3)
 target_link_libraries(lightspeed Eigen3::Eigen)
