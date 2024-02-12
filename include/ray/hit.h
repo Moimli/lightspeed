@@ -1,17 +1,12 @@
 #pragma once
 
 #include <ray/ray.h>
-#include <surface/surface.h>
 
 namespace Ray
 {
-    class Hit
+    struct Hit
     {
-    private:
-        const Ray reflected;
-        const Ray refracted;
-    public:
-        Hit(const Surface::SurfaceHit& surfaceHit, const Material::Material& material);
-        ~Hit();
+        Ray reflected;
+        Ray refracted;
     };
 } // namespace Ray

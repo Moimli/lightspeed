@@ -4,6 +4,8 @@ project(lightspeed CXX)
 add_library(lightspeed)
 target_include_directories(lightspeed PUBLIC include)
 
+set_property(TARGET lightspeed PROPERTY CXX_STANDARD 17)
+
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS src/*.cpp include/*.h)
 target_sources(lightspeed PRIVATE ${sources})
 
