@@ -13,12 +13,17 @@ namespace Surface
             Eigen::Vector4f m_v;
 
         public:
-            Plane(const Eigen::Vector4f& v) : m_v(v){};
+            Plane(const Eigen::Vector4f &v) : m_v(v){};
             ~Plane(){};
 
-            bool is_inside(const Eigen::Vector3f& position) override
+            bool is_inside(const Eigen::Vector3f &position) const override
             {
                 return (m_v(0) * position(0) + m_v(1) * position(1) + m_v(2) * position(2) + m_v(3)) <= 0;
+            };
+
+            std::optional<double> solve(const Eigen::Vector3f &position, const Eigen::Vector3f &direction) const override
+            {
+                return std::nullopt;
             };
         };
     }
