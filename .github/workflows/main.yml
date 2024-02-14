@@ -18,4 +18,4 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: Conan Create
-        run: conan create ${{ github.workspace }}
+        run: conan create ${{ github.workspace }} -s compiler.cppstd=23
