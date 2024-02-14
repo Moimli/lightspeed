@@ -21,4 +21,4 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: Conan Create
-        run: conan create ${{ github.workspace }} -pr:b ./.github/profile -pr:h ./.github/profile
+        run: conan create ${{ github.workspace }} -pr:b ./.github/profile -pr:h ./.github/profile --build=missing
