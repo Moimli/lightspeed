@@ -10,12 +10,10 @@ jobs:
         uses: turtlebrowser/get-conan@main
       - name: Conan Version
         run: echo "${{ steps.conan.outputs.version }}"
-      - name: Conan Profile Detect
-        run: conan profile detect
       - name: Checkout
         uses: actions/checkout@v4
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
       - name: Conan Create
-        run: conan create ${{ github.workspace }} -s compiler.cppstd=23
+        run: conan create ${{ github.workspace }} -pr ./.github/profile
